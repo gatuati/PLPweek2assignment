@@ -1,0 +1,49 @@
+# Activity 1: Rectangle Class with Inheritance
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)  # Square has equal sides
+
+rect = Rectangle(10, 5)
+square = Square(7)
+
+print(" Rectangle Area:", rect.area())
+print("Rectangle Perimeter:", rect.perimeter())
+
+print("Square Area:", square.area())
+print("Square Perimeter:", square.perimeter())
+
+# Activity 2: Polymorphism Challenge
+class Vehicle:
+    def move(self):
+        pass  
+
+class Car(Vehicle):
+    def move(self):
+        print("The car is driving.")
+
+class Plane(Vehicle):
+    def move(self):
+        print("✈The plane is flying.")
+
+class Boat(Vehicle):
+    def move(self):
+        print("The boat is sailing.")
+car = Car()
+plane = Plane()
+boat = Boat()
+
+vehicles = [car, plane, boat]
+
+for v in vehicles:
+    v.move()
