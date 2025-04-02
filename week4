@@ -1,0 +1,11 @@
+with open("input.txt", "r") as file:
+    data = file.read()
+    print(data)  
+with open("input.txt", "w") as file:
+    file.write("hello, world")
+try:
+    with open("input.txt", "r") as file:
+        data = file.read()
+        print(data)  
+except FileNotFoundError:
+    print("File not found, please enter the correct file name.")
