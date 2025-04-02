@@ -1,0 +1,13 @@
+def calculate_discount(price, discount_percent):
+    if discount_percent >= 20:  
+        final_price = price - (price * discount_percent / 100)  
+    else:
+        final_price = price  # No discount applied
+
+    return final_price  # Return the final price
+
+price = float(input("Enter the original price: "))
+discount_percent = float(input("Enter the discount percentage: "))
+
+final_price = calculate_discount(price, discount_percent)
+print(f"Final price after discount: {final_price}")
